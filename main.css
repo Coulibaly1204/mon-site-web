@@ -17,12 +17,55 @@ html{
 
 
 body{
-    background-image: url(Images/back.png);
+    background: linear-gradient(rgb(7, 0, 20), #270138);
     color: #fff;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 
+}
+.container{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+
+}
+.bubbles{
+    position: relative;
+    display: flex;
+}
+
+.bubbles span{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc, 0 0 50px #4fc3dc, 0 0 100px 20px #4fc3dc;
+    animation: animate 15s cubic-bezier(0, 1.12, 0.96, -0.23) infinite ;
+    animation-duration: calc(300s /var(--i));
+}
+
+
+.bubbles span:nth-child(even){
+
+    background: #ff004f;
+    box-shadow: 0 0 0 10px #ff00dc44,
+    0 0 50px #ff004f,
+    0 0 100px #ff004f;
+
+}
+
+@keyframes animate{
+    
+    
+    0%
+    {
+        transform: translateY(450vh) scale(0);
+    }
+    100%
+    {
+        transform: translateY(-400vh) scale(1);
+    }
 }
 
 #header{
@@ -170,7 +213,7 @@ nav ul li a:hover::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: #4fc3dc;
     position: absolute;
     left: 0;
     bottom: -8px;
@@ -193,8 +236,10 @@ nav ul li a:hover::after{
 
 
 .tab-contents ul li span{
-    color: #b54769;
-    font-size: 14px;
+    color: #4fc3dc;
+    text-shadow: 0 0 20px #4fc3dc;
+    font-size: 18px;
+    font-weight: 550;
 }
 
 
@@ -516,11 +561,9 @@ nav .fas{
 
 
 @media only screen and (max-width: 600px){
+     
     
 
-    body{
-        background: url(Images/background.png);
-    }
      .header-text{
         margin-top: 100%;
         font-size: 16px;
