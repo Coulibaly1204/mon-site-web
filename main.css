@@ -15,6 +15,12 @@ html{
     scroll-behavior: smooth;
 }
 
+.gomycode{
+    text-decoration: none;
+    text-shadow: 0 0 20px #4fc3dc;
+    color: #4fc3dc;
+}
+
 
 body{
     background: linear-gradient(rgb(7, 0, 20), #270138);
