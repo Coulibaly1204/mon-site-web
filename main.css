@@ -84,6 +84,20 @@ body{
     padding: 10px 10%;
 }
 
+/* A restrained palette for the opening section. */
+body > .container{
+    display: none;
+}
+
+#header{
+    --header-background: #181d20;
+    --header-text: #f2f1eb;
+    --header-accent: #b5c9bb;
+    position: relative;
+    background: var(--header-background);
+    color: var(--header-text);
+}
+
 
 nav{
     display: flex;
@@ -105,7 +119,7 @@ nav ul li{
 
 
 nav ul li a{
-    color: #fff;
+    color: var(--header-text);
     text-decoration: none;
     font-size: 18px;
     position: relative;
@@ -115,7 +129,7 @@ nav ul li a::after{
     content: '';
     width: 0;
     height: 3px;
-    background: #ff004f;
+    background: var(--header-accent);
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -124,6 +138,15 @@ nav ul li a::after{
 
 nav ul li a:hover::after{
     width: 100%;
+}
+
+nav ul li a:focus-visible{
+    outline: 2px solid var(--header-accent);
+    outline-offset: 6px;
+}
+
+.header-text > p{
+    color: var(--header-accent);
 }
 
 
@@ -140,7 +163,7 @@ nav ul li a:hover::after{
 
 
 .header-text h1 span{
-    color: #ff004f ;
+    color: var(--header-accent);
 }
 
 
@@ -585,7 +608,8 @@ nav .fas{
     }
 
     nav ul{
-        background: #ff004f;
+        background: var(--header-background);
+        border-left: 1px solid #39453f;
         position: fixed;
         top: 0;
         right: -200px;
